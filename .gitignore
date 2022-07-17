@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/CFM-PARALLEL/bin/Debug
+/CFM-PARALLEL/obj/Debug
+/bin/Debug
+/obj/Debug
+/packages/log4net.2.0.8
+/packages

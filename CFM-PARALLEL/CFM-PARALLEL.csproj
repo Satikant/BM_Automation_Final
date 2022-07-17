@@ -1,0 +1,623 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" />
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="..\packages\NUnit3TestAdapter.3.15.1\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.3.15.1\build\net35\NUnit3TestAdapter.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{85598A90-C0E7-4333-B117-7D6D8A6FC2A3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CFM_PARALLEL</RootNamespace>
+    <AssemblyName>CFM-PARALLEL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Appium.Net, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Appium.WebDriver.4.0.0\lib\net45\Appium.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.4.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Crc32C.NET, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crc32C.NET.1.0.5.0\lib\net20\Crc32C.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.30\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DataAccess.1.0.0.3\lib\DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="DnsClient, Version=1.2.0.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.2.0\lib\net45\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtentReports, Version=4.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExtentReports.4.0.3\lib\ExtentReports.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.41.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.41.1\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.41.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.41.1\lib\net45\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.41.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.41.1\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.41.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.41.1\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Gmail.v1, Version=1.41.1.1635, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Gmail.v1.1.41.1.1635\lib\net45\Google.Apis.Gmail.v1.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.41.1.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.41.1\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.2.0.246, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.2.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <HintPath>..\packages\SikuliIntegrator.1.1.0\lib\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.UnitTestFramework.Extensions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5bf63060baa03a11, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.UnitTestFramework.Extensions.2.0.0\lib\net45\Microsoft.UnitTestFramework.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MSTest.TestFramework.2.0.0\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MSTest.TestFramework.2.0.0\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.9.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.9.2\lib\net452\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.9.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.9.2\lib\net452\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.9.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.9.2\lib\net452\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net, Version=2.4.0.0, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\packages\protobuf-net.2.4.4\lib\net40\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="RandomNameGenerator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RandomNameGenerator.1.0.4\lib\RandomNameGenerator.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine, Version=3.10.0.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorEngine.3.10.0\lib\net45\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.6.10.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.6.10\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SeleniumExtras.PageObjects, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetSeleniumExtras.PageObjects.3.11.0\lib\net45\SeleniumExtras.PageObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="SeleniumExtras.WaitHelpers, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetSeleniumExtras.WaitHelpers.3.11.0\lib\net45\SeleniumExtras.WaitHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.24.0.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpCompress.0.24.0\lib\net45\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="Sikuli4Net, Version=1.0.5319.36348, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sikuli4Net.1.0.6\lib\Sikuli4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="SikuliModule, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SikuliIntegrator.1.1.0\lib\SikuliModule.dll</HintPath>
+    </Reference>
+    <Reference Include="SikuliSharp, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SikuliSharp.1.5.0\lib\net451\SikuliSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Snappy.NET, Version=1.1.1.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Snappy.NET.1.1.1.8\lib\net45\Snappy.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\SikuliIntegrator.1.1.0\lib\System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Forms.4.0.0.0\lib\System.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="Zlib.Portable, Version=1.11.0.0, Culture=neutral, PublicKeyToken=431cba815f6a8b5b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zlib.Portable.Signed.1.11.0\lib\portable-net4+sl5+wp8+win8+wpa81+MonoTouch+MonoAndroid\Zlib.Portable.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Parameters.cs" />
+    <Compile Include="Common\BrowserURLLaunch.cs" />
+    <Compile Include="Common\CommonFunctions.cs" />
+    <Compile Include="Common\CommonUtilities.cs" />
+    <Compile Include="Common\Database.cs" />
+    <Compile Include="Common\DateSelection.cs" />
+    <Compile Include="Enum\Browser.cs" />
+    <Compile Include="Interactions\BasicInteractions.cs" />
+    <Compile Include="PageObject\API\ACE\API_Output_Excel_Reading.cs" />
+    <Compile Include="PageObject\PageFactory\Pages.cs" />
+    <Compile Include="PageObject\UI\Ace\BrandingPreapproval\Preapprovals_AddAttachments.cs" />
+    <Compile Include="PageObject\UI\Ace\BrandingPreapproval\Preapprovals_EnterDetails.cs" />
+    <Compile Include="PageObject\UI\Ace\BrandingPreapproval\PreApprovals_Validation.cs" />
+    <Compile Include="PageObject\UI\Ace\BrandingPreapproval\PreApproval_AdvanceSearch.cs" />
+    <Compile Include="PageObject\UI\Ace\BrandingPreapproval\PreApproval_ApprovalPermission.cs" />
+    <Compile Include="PageObject\UI\Ace\BrandingPreapproval\Preapproval_Clone.cs" />
+    <Compile Include="PageObject\UI\Ace\BrandingPreapproval\Preapproval_FullFlow.cs" />
+    <Compile Include="PageObject\UI\Ace\BrandingPreapproval\PreApproval_Negative.cs" />
+    <Compile Include="PageObject\UI\Ace\BrandingPreapproval\PreApproval_PerformAction.cs" />
+    <Compile Include="PageObject\UI\Ace\Claim\Claim_ApprovalPermission.cs" />
+    <Compile Include="PageObject\UI\Ace\Claim\Claim_AttachDocuments.cs" />
+    <Compile Include="PageObject\UI\Ace\Claim\Claim_ChooseProgram.cs" />
+    <Compile Include="PageObject\UI\Ace\Claim\Claim_Clone.cs" />
+    <Compile Include="PageObject\UI\Ace\Claim\Claim_EnterDetails.cs" />
+    <Compile Include="PageObject\UI\Ace\Claim\Claim_FullFlow.cs" />
+    <Compile Include="PageObject\UI\Ace\Claim\Claim_Negative.cs" />
+    <Compile Include="PageObject\UI\Ace\Claim\Claim_PerformAction.cs" />
+    <Compile Include="PageObject\UI\Ace\Claim\Claim_Resubmitted.cs" />
+    <Compile Include="PageObject\UI\Ace\Claim\Claim_ReviewSubmit.cs" />
+    <Compile Include="PageObject\UI\Ace\Claim\Claim_Validations.cs" />
+    <Compile Include="PageObject\UI\Ace\Dashboard\Dashboard_Landing.cs" />
+    <Compile Include="PageObject\UI\Ace\Disbursement\Disbursement_Fullflow.cs" />
+    <Compile Include="PageObject\UI\Ace\Disbursement\Disbursement_ManageDisbursement.cs" />
+    <Compile Include="PageObject\UI\Ace\Disbursement\Disbursement_Negative.cs" />
+    <Compile Include="PageObject\UI\Ace\Disbursement\Disbursement_PreviewDisbursement.cs" />
+    <Compile Include="PageObject\UI\Ace\Disbursement\Disbursement_RequestApproval.cs" />
+    <Compile Include="PageObject\UI\Ace\Disbursement\Disbursement_SelectClaims.cs" />
+    <Compile Include="PageObject\UI\Ace\Disbursement\ManualDisbursement.cs" />
+    <Compile Include="PageObject\UI\Ace\Program\Program_AccrualDetails.cs" />
+    <Compile Include="PageObject\UI\Ace\Program\Program_FullFlow.cs" />
+    <Compile Include="PageObject\UI\Ace\Program\Program_NegativeScenario.cs" />
+    <Compile Include="PageObject\UI\Ace\Program\Program_Preview.cs" />
+    <Compile Include="PageObject\UI\Ace\Program\Program_ProgramDetails.cs" />
+    <Compile Include="PageObject\UI\Ace\Program\Program_ProgramsFlow.cs" />
+    <Compile Include="PageObject\UI\Ace\Program\Program_Reimbursement.cs" />
+    <Compile Include="PageObject\UI\Ace\Transactions\Transaction_Accrual.cs" />
+    <Compile Include="PageObject\UI\Ace\Transactions\Transaction_Adjustment.cs" />
+    <Compile Include="PageObject\UI\Ace\Transactions\Transaction_Negative.cs" />
+    <Compile Include="PageObject\UI\Ace\Transactions\Transaction_Transfer.cs" />
+    <Compile Include="PageObject\UI\CampaignManager\CM_Menus.cs" />
+    <Compile Include="PageObject\UI\CampaignManager\Event.cs" />
+    <Compile Include="PageObject\UI\CampaignManager\Homepage.cs" />
+    <Compile Include="PageObject\UI\CampaignManager\JiraTenanntConfig.cs" />
+    <Compile Include="PageObject\UI\CampaignManager\JiraTenantMapping.cs" />
+    <Compile Include="PageObject\UI\CampaignManager\MediaMapping.cs" />
+    <Compile Include="PageObject\UI\CampaignManager\PackageBeneficiary.cs" />
+    <Compile Include="PageObject\UI\CampaignManager\PackageType.cs" />
+    <Compile Include="PageObject\UI\CampaignManager\Platform.cs" />
+    <Compile Include="PageObject\UI\CampaignManager\Product.cs" />
+    <Compile Include="PageObject\UI\CampaignManager\Program.cs" />
+    <Compile Include="PageObject\UI\CampaignManager\ProgramType.cs" />
+    <Compile Include="PageObject\UI\CampaignManager\SubPlatform.cs" />
+    <Compile Include="PageObject\UI\CampaignManager\SubTactic.cs" />
+    <Compile Include="PageObject\UI\CampaignManager\TacticMarketingTypes.cs" />
+    <Compile Include="PageObject\UI\CampaignManager\Tactics.cs" />
+    <Compile Include="PageObject\UI\CampaignManager\TacticTypes.cs" />
+    <Compile Include="PageObject\UI\Functions\ACE\CoOpAdapter\ACE_CoopAdaptor.cs" />
+    <Compile Include="PageObject\UI\Functions\Amnat\BrandPreApproval\AM_BrandPreApproval.cs" />
+    <Compile Include="PageObject\UI\Functions\Amnat\Claim\AM_Claims.cs" />
+    <Compile Include="PageObject\UI\Functions\Amnat\Dashboard\AM_Dashboard.cs" />
+    <Compile Include="PageObject\UI\Functions\Amnat\Programs\AM_Programs.cs" />
+    <Compile Include="PageObject\UI\Functions\Bobcat\BrandPreApproval\BC_BPA.cs" />
+    <Compile Include="PageObject\UI\Functions\Bobcat\Claim\BC_Claim.cs" />
+    <Compile Include="PageObject\UI\Functions\Bobcat\CoOpAdapter\BC_CoopAdaptor.cs" />
+    <Compile Include="PageObject\UI\Functions\Bobcat\Dashboard\BC_Dashboard.cs" />
+    <Compile Include="PageObject\UI\Functions\Bobcat\Program\BC_ProgramManagement.cs" />
+    <Compile Include="PageObject\UI\Functions\Bobcat\Transactions\BC_Transactions.cs" />
+    <Compile Include="PageObject\UI\Functions\Farmers\Claim\Farmers_Claim.cs" />
+    <Compile Include="PageObject\UI\Functions\Farmers\Dashboard\Farmers_Dashboard.cs" />
+    <Compile Include="PageObject\UI\Functions\Geico\Claims\Geico_Claims.cs" />
+    <Compile Include="PageObject\UI\Functions\Geico\Dashboard\Geico_Dashboard.cs" />
+    <Compile Include="PageObject\UI\Functions\Geico\Program\Geico_Program.cs" />
+    <Compile Include="PageObject\UI\Functions\Masco\BrandPreApproval\MS_BrandPreApproval.cs" />
+    <Compile Include="PageObject\UI\Functions\Masco\Claims\MS_Claims.cs" />
+    <Compile Include="PageObject\UI\Functions\Masco\DisplayClaims\MS_DisplayClaims.cs" />
+    <Compile Include="PageObject\UI\Functions\Masco\FundPreApproval\MS_FundPreApproval.cs" />
+    <Compile Include="PageObject\UI\Functions\Masco\Transaction\MS_Transaction.cs" />
+    <Compile Include="PageObject\UI\Functions\Masco\Dashboard\MS_Dashboard.cs" />
+    <Compile Include="PageObject\UI\Functions\Masco\FundRequest\MS_FundRequest.cs" />
+    <Compile Include="PageObject\UI\Functions\Masco\Programs\MS_Programs.cs" />
+    <Compile Include="PageObject\UI\Functions\Nationwide\Claim\NW_Claims.cs" />
+    <Compile Include="PageObject\UI\Functions\Nationwide\Dashboard\NW_Dashboard.cs" />
+    <Compile Include="PageObject\UI\Functions\Nationwide\Disbursements\NW_Disbursements.cs" />
+    <Compile Include="PageObject\UI\Functions\Nationwide\DisplayClaim\NW_DisplayClaims.cs" />
+    <Compile Include="PageObject\UI\Functions\Nationwide\FundRequest\NW_FundRequest.cs" />
+    <Compile Include="PageObject\UI\Functions\Nationwide\Payments\NW_Payments.cs" />
+    <Compile Include="PageObject\UI\Functions\Nationwide\Programs\NW_Programs.cs" />
+    <Compile Include="PageObject\UI\Functions\Pandora\Claim\PN_Claim.cs" />
+    <Compile Include="PageObject\UI\Functions\Pandora\Dashboard\PN_Dashboard.cs" />
+    <Compile Include="PageObject\UI\Functions\Pandora\Programs\PN_ProgramManagement.cs" />
+    <Compile Include="PageObject\UI\Functions\Pandora\Transactions\PN_Transactions.cs" />
+    <Compile Include="PageObject\UI\Functions\Prod_BU\BrandPreApproval\Prod_BU_BPA.cs" />
+    <Compile Include="PageObject\UI\Functions\Prod_BU\Claims\Claims_DisplayClaim.cs" />
+    <Compile Include="PageObject\UI\ObjectRepository\Claims\OBJ_Claims.cs" />
+    <Compile Include="PageObject\UI\ObjectRepository\CommonObjects\OBJ_Common.cs" />
+    <Compile Include="PageObject\UI\ObjectRepository\Coop Funds\OBJ_CoopAdaptor.cs" />
+    <Compile Include="PageObject\UI\ObjectRepository\Dashboard\Common_Dashboard_Landing.cs" />
+    <Compile Include="PageObject\UI\ObjectRepository\Dashboard\OBJ_Dashboard.cs" />
+    <Compile Include="PageObject\UI\ObjectRepository\Disbursements\OBJ_Disbursement.cs" />
+    <Compile Include="PageObject\UI\ObjectRepository\DisplayClaims\OBJ_DisplayClaims.cs" />
+    <Compile Include="PageObject\UI\ObjectRepository\FundRequest\OBJ_FundRequest.cs" />
+    <Compile Include="PageObject\UI\ObjectRepository\Payment\OBJ_Payments.cs" />
+    <Compile Include="PageObject\UI\ObjectRepository\Pre-Approvals\OBJ_PreApprovals.cs" />
+    <Compile Include="PageObject\UI\ObjectRepository\Program_Management\OBJ_Program.cs" />
+    <Compile Include="PageObject\UI\ObjectRepository\Transactions\OBJ_Transactions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StartUp\Base.cs" />
+    <Compile Include="Tests\Campaign Manager\Administration\CM_TestScripts.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\ACE_API\ACE_API_TestClass.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_Deprecated\Deprecated.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_Production_Smoke\Ace_Production_Smoke.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6040_ACECorporate_Program_NegativeScenario.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6042_ACECorporate_Transactions_FundSnapshot.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6044_ACECorporate_BPA_Approved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6045_ACECorporate_Transactions_NegativeScenario.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6046_ACECorporate_BPA_Disapproved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6048_ACECorporate_BPA_NeedsChanges.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6049_ACECorporate_BPA_DatabaseValidation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6050_ACECorporate_BPA_Date_Validation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6051_ACECorporate_BPA_AdvanceSearch.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6052_ACECorporate_BPA_ApprovalPermissionNegSce.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6054_ACECorporate_Disbursement_Completed.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6058_ACECorporate_Program_FundSnapshot.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6059_ACECorporate_Disbursement_Deny.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6063_ACECorporate_Disbursement_ViewDisbursement.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6065_ACECorporate_Disbursement_Negative_CreateDisbursement.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6066_ACECorporate_Disbursement_Negative_EditDisbursement.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6068_ACECorporate_Disbursement_Negative_CloneDisbursement.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6070_ACECorporate_Disbursement_Negative_ApproveDisbursement.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6141_ACECorporate_Claim_WithBPA_Approved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6184_ACECorporate_Claim_WithBPA_Disapproved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6186_ACECorporate_Claim_WithBPA_NeedsChange.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6187_ACECorporate_Claim_Amount_Validation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6194_ACECorporate_Claim_Date_Validation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6197_ACECorporate_Claim_Approved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6199_ACECorporate_Claim_Disapproved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6200_ACECorporate_Claim_NeedsChange.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6201_ACECorporate_Claim_ApprovalPermissionNegSce.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_6475_ACECorporate_Disbursement_RequestData.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_7545_ACECorporate_Claim_Hold.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_7566_ACECorporate_Claim_WithBPA_Hold.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\ACECorporate\RT_TC_7569_ACECorporate_BPA_Hold.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_5963_BrandMuscleAdmin_Program_Creation_Flat.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_5964_BrandMuscleAdmin_Program_Creation_Rolling12.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_5966_BrandMuscleAdmin_Claim_WithBPA_Approved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_5968_BrandMuscleAdmin_BPA_Approved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_5971_BrandMuscleAdmin_BPA_Disapproved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_5980_BrandMuscleAdmin_BPA_NeedsChanges.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_5985_BrandMuscleAdmin_Claim_WithBPA_Disapproved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_5986_BrandMuscleAdmin_Claim_Resubmitted.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_5987_BrandMuscleAdmin_Disbursement_Completed.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_5989_BrandMuscleAdmin_Claim_WithBPA_NeedsChange.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_5990_BrandMuscleAdmin_Claim_PendingReview.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_5991_BrandMuscleAdmin_Transactions_AccrualPositive.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_5993_BrandMuscleAdmin_Transactions_AccrualNegative.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_5994_BrandMuscleAdmin_Disbursement_Deny.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_5995_BrandMuscleAdmin_Transactions_TransferPositive.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_5997_BrandMuscleAdmin_Transactions_AdjustmentPositive.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_5998_BrandMuscleAdmin_Transactions_AdjustmentNegative.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_5999_BrandMuscleAdmin_Transactions_Accrual_FundSnapshot.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_6000_BrandMuscleAdmin_Transactions_Transfer_FundSnapshot.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_6001_BrandMuscleAdmin_Transactions_Adjustment_FundSnapshot.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_6002_BrandMuscleAdmin_Transactions_Accrual_Flat.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_6003_BrandMuscleAdmin_Transactions_Accrual_Rolling.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_6004_BrandMuscleAdmin_Claim_Amount_Validation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_6005_BrandMuscleAdmin_Claim_Date_Validation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_6039_BrandMuscleAdmin_BPA_DatabaseValidation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_6041_BrandMuscleAdmin_BPA_AdvanceSearch.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_6043_BrandMuscleAdmin_BPA_Date_Validation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_6112_Dashboard_RegressionTest.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_6181_BrandMuscleAdmin_Claim_Approved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_6182_BrandMuscleAdmin_Claim_Disapproved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_6183_BrandMuscleAdmin_Claim_NeedsChange.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_6476_BrandMuscleAdmin_Disbursement_NeedChange.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_7519_BrandMuscleAdmin_Claim_Hold.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_7520_BrandMuscleAdmin_Claim_WithBPA_Hold.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_7523_BrandMuscleAdmin_BPA_Hold.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_BrandMuscleAdmin_BPA_Creation_Negative.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_BrandMuscleAdmin_Claim_Creation_Negative.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\BrandMuscleAdmin\RT_TC_BrandMuscleAdmin_Program_Creation_NegativeErrorMessages.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_1_CFMChainHQ_ClaimProgramOverdrawnNeedChange.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_1_CFMChainHQ_ClaimProgramOverdrawn_Deny.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_1_CFMChainHQ_ClaimProgramOverdrawn_Hold.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_6115_CFMChainHQ_Disbursement_Negative.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_6116_CFMChainHQ_BPA_Approved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_6117_CFMChainHQ_BPA_Disapproved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_6119_CFMChainHQ_BPA_NeedsChanges.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_6120_CFMChainHQ_BPA_DatabaseValidation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_6121_CFMChainHQ_BPA_Date_Validation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_6122_CFMChainHQ_BPA_AdvanceSearch.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_6123_CFMChainHQ_BPA_ApprovalPermissionNegSce.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_6137_CFMChainHQ_Program_NegativeScenario.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_6138_CFMChainHQ_Program_FundSnapshot.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_6139_CFMChainHQ_Transactions_FundSnapshot.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_6140_CFMChainHQ_Transactions_NegativeScenario.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_6262_CFMChainHQ_Claim_WithBPA_Approved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_6263_CFMChainHQ_Claim_WithBPA_Disapproved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_6264_CFMChainHQ_Claim_WithBPA_NeedsChange.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_6265_CFMChainHQ_Claim_Amount_Validation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_6266_CFMChainHQ_Claim_Date_Validation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_1_CFMChainHQ_ClaimProgramOverdrawn_Approved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_6267_CFMChainHQ_Claim_Approved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_6268_CFMChainHQ_Claim_NeedsChange.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_6269_CFMChainHQ_Claim_ApprovalPermissionNegSce.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_6270_CFMChainHQ_Claim_Disapproved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_7571_CFMChainHQ_Claim_Hold.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_7572_CFMChainHQ_Claim_WithBPA_Hold.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMChainHQ\RT_TC_7573_CFMChainHQ_BPA_Hold.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMIndependent\RT_TC_6124_CFMIndependent_Disbursement_Negative.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMIndependent\RT_TC_6125_CFMIndependent_BPA_Approved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMIndependent\RT_TC_6126_CFMIndependent_BPA_Disapproved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMIndependent\RT_TC_6128_CFMIndependent_BPA_NeedsChanges.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMIndependent\RT_TC_6129_CFMIndependent_BPA_DatabaseValidation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMIndependent\RT_TC_6130_CFMIndependent_BPA_Date_Validation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMIndependent\RT_TC_6131_CFMIndependent_BPA_AdvanceSearch.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMIndependent\RT_TC_6132_CFMIndependent_BPA_ApprovalPermissionNegSce.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMIndependent\RT_TC_6133_CFMIndependent_Program_NegativeScenario.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMIndependent\RT_TC_6134_CFMIndependent_Program_FundSnapshot.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMIndependent\RT_TC_6135_CFMIndependent_Transactions_FundSnapshot.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMIndependent\RT_TC_6136_CFMIndependent_Transactions_NegativeScenario.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMIndependent\RT_TC_6221_CFMIndependent_Claim_WithBPA_Approved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMIndependent\RT_TC_6222_CFMIndependent_Claim_WithBPA_Disapproved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMIndependent\RT_TC_6223_CFMIndependent_Claim_WithBPA_NeedsChange.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMIndependent\RT_TC_6224_CFMIndependent_Claim_Amount_Validation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMIndependent\RT_TC_6225_CFMIndependent_Claim_Date_Validation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMIndependent\RT_TC_6226_CFMIndependent_Claim_Approved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMIndependent\RT_TC_6227_CFMIndependent_Claim_NeedsChange.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMIndependent\RT_TC_6228_CFMIndependent_Claim_ApprovalPermissionNegSce.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMIndependent\RT_TC_6229_CFMIndependent_Claim_Disapproved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMIndependent\RT_TC_7567_CFMIndependent_Claim_WithBPA_Hold.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMIndependent\RT_TC_7568_CFMIndependent_Claim_Hold.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\CFMIndependent\RT_TC_7570_CFMIndependent_BPA_Hold.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DistrictManager\RT_TC_6055_DistrictManager_Program_NegativeScenario.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DistrictManager\RT_TC_6056_DistrictManager_Transactions_FundSnapshot.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DistrictManager\RT_TC_6057_DistrictManager_Transactions_NegativeScenario.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DistrictManager\RT_TC_6061_DistrictManager_Program_FundSnapshot.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DistrictManager\RT_TC_6073_DistrictManager_BPA_Approved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DistrictManager\RT_TC_6074_DistrictManager_BPA_Disapproved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DistrictManager\RT_TC_6076_DistrictManager_BPA_NeedsChanges.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DistrictManager\RT_TC_6077_DistrictManager_BPA_DatabaseValidation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DistrictManager\RT_TC_6078_DistrictManager_BPA_Date_Validation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DistrictManager\RT_TC_6079_DistrictManager_BPA_AdvanceSearch.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DistrictManager\RT_TC_6081_DistrictManager_BPA_ApprovalPermissionNegSce.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DistrictManager\RT_TC_6083_DistrictManager_Disbursement_Negative.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DistrictManager\RT_TC_6234_DistrictManager_Claim_WithBPA_Approved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DistrictManager\RT_TC_6235_DistrictManager_Claim_WithBPA_Disapproved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DistrictManager\RT_TC_6236_DistrictManager_Claim_WithBPA_NeedsChange.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DistrictManager\RT_TC_6237_DistrictManager_Claim_Amount_Validation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DistrictManager\RT_TC_6238_DistrictManager_Claim_Date_Validation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DistrictManager\RT_TC_6239_DistrictManager_Claim_Approved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DistrictManager\RT_TC_6241_DistrictManager_Claim_Disapproved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DistrictManager\RT_TC_6242_DistrictManager_Claim_NeedsChange.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DistrictManager\RT_TC_6243_DistrictManager_Claim_ApprovalPermissionNegSce.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DistrictManager\RT_TC_7638_DistrictManager_Claim_WithBPA_Hold.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DistrictManager\RT_TC_7639_DistrictManager_Claim_Hold.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DistrictManager\RT_TC_7643_DistrictManager_BPA_Hold.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DivisionalManager\RT_TC_6062_DivisionalManager_Transactions_FundSnapshot.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DivisionalManager\RT_TC_6064_DivisionalManager_Transactions_NegativeScenario.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DivisionalManager\RT_TC_6067_DivisionalManager_Program_NegativeScenario.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DivisionalManager\RT_TC_6069_DivisionalManager_Program_FundSnapshot.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DivisionalManager\RT_TC_6092_DivisionalManager_BPA_Approved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DivisionalManager\RT_TC_6093_DivisionalManager_BPA_Disapproved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DivisionalManager\RT_TC_6095_DivisionalManager_BPA_NeedsChanges.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DivisionalManager\RT_TC_6096_DivisionalManager_BPA_DatabaseValidation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DivisionalManager\RT_TC_6097_DivisionalManager_BPA_Date_Validation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DivisionalManager\RT_TC_6098_DivisionalManager_BPA_AdvanceSearch.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DivisionalManager\RT_TC_6099_DivisionalManager_BPA_ApprovalPermissionNegSce.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DivisionalManager\RT_TC_6100_DivisionalManager_Disbursement_Negative.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DivisionalManager\RT_TC_6233_DivisionalManager_Claim_WithBPA_Approved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DivisionalManager\RT_TC_6240_DivisionalManager_Claim_WithBPA_Disapproved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DivisionalManager\RT_TC_6244_DivisionalManager_Claim_WithBPA_NeedsChange.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DivisionalManager\RT_TC_6245_DivisionalManager_Claim_Amount_Validation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DivisionalManager\RT_TC_6246_DivisionalManager_Claim_Date_Validation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DivisionalManager\RT_TC_6248_DivisionalManager_Claim_Approved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DivisionalManager\RT_TC_6249_DivisionalManager_Claim_NeedsChange.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DivisionalManager\RT_TC_6251_DivisionalManager_Claim_ApprovalPermissionNegSce.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DivisionalManager\RT_TC_6252_DivisionalManager_Claim_Disapproved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DivisionalManager\RT_TC_7641_DivisionalManager_Claim_WithBPA_Hold.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DivisionalManager\RT_TC_7642_DivisionalManager_Claim_Hold.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\DivisionalManager\RT_TC_7644_DivisionalManager_BPA_Hold.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\RegionalManager\RT_TC_6071_RegionalManager_Program_NegativeScenario.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\RegionalManager\RT_TC_6072_RegionalManager_Program_FundSnapshot.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\RegionalManager\RT_TC_6080_RegionalManager_Transactions_FundSnapshot.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\RegionalManager\RT_TC_6082_RegionalManager_Transactions_NegativeScenario.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\RegionalManager\RT_TC_6101_RegionalManager_BPA_Approved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\RegionalManager\RT_TC_6102_RegionalManager_BPA_Disapproved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\RegionalManager\RT_TC_6104_RegionalManager_BPA_NeedsChanges.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\RegionalManager\RT_TC_6105_RegionalManager_BPA_DatabaseValidation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\RegionalManager\RT_TC_6106_RegionalManager_BPA_Date_Validation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\RegionalManager\RT_TC_6107_RegionalManager_BPA_AdvanceSearch.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\RegionalManager\RT_TC_6108_RegionalManager_BPA_ApprovalPermissionNegSce.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\RegionalManager\RT_TC_6109_RegionalManager_Disbursement_Negative.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\RegionalManager\RT_TC_6247_RegionalManager_Claim_WithBPA_Approved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\RegionalManager\RT_TC_6250_RegionalManager_Claim_WithBPA_Disapproved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\RegionalManager\RT_TC_6253_RegionalManager_Claim_WithBPA_NeedsChange.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\RegionalManager\RT_TC_6254_RegionalManager_Claim_Amount_Validation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\RegionalManager\RT_TC_6255_RegionalManager_Claim_Date_Validation.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\RegionalManager\RT_TC_6256_RegionalManager_Claim_Approved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\RegionalManager\RT_TC_6257_RegionalManager_Claim_NeedsChange.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\RegionalManager\RT_TC_6258_RegionalManager_Claim_ApprovalPermissionNegSce.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\RegionalManager\RT_TC_6259_RegionalManager_Claim_Disapproved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\RegionalManager\RT_TC_7645_RegionalManager_Claim_WithBPA_Hold.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\RegionalManager\RT_TC_7646_RegionalManager_Claim_Hold.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_RegressionTest_CFM_ACE_REGRESSION\RegionalManager\RT_TC_7648_RegionalManager_BPA_Hold.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_SmokeTest-CFM_ACE_SMOKE\ST_TC_6112_Dashboard.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_SmokeTest-CFM_ACE_SMOKE\ST_TC_6335_BPA_Approved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_SmokeTest-CFM_ACE_SMOKE\ST_TC_6336_BPA_Disapproved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_SmokeTest-CFM_ACE_SMOKE\ST_TC_6337_BPA_NeedsChange.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_SmokeTest-CFM_ACE_SMOKE\ST_TC_6338_BPA_Cloned.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_SmokeTest-CFM_ACE_SMOKE\ST_TC_6339_Claim_WithBPA_Approved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_SmokeTest-CFM_ACE_SMOKE\ST_TC_6340_Claim_Disapproved.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_SmokeTest-CFM_ACE_SMOKE\ST_TC_6341_Claim_Hold.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_SmokeTest-CFM_ACE_SMOKE\ST_TC_6342_Claim_Clone.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_SmokeTest-CFM_ACE_SMOKE\ST_TC_6469_Disbursement.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_SmokeTest-CFM_ACE_SMOKE\ST_TC_6472_BPA_Hold.cs" />
+    <Compile Include="Tests\Coop\ACE_Hardware\Ace_SmokeTest-CFM_ACE_SMOKE\ST_TC_6473_Claim_WithoutBPA_NeedsChange.cs" />
+    <Compile Include="Tests\Coop\Amnat\Amnat_Smoke_Prod\Amnat_Smoke_Prod.cs" />
+    <Compile Include="Tests\Coop\Bobcat\BobCat_Production_Smoke\BobCat_Production_Smoke.cs" />
+    <Compile Include="Tests\Coop\Bobcat\BobCat_Regression_QA\BobCat_Regression.cs" />
+    <Compile Include="Tests\Coop\Bobcat\BobCat_Stage_Smoke\BobCat_Stage_Smoke.cs" />
+    <Compile Include="Tests\Coop\DitchWitch\DitchWitch_Smoke.cs" />
+    <Compile Include="Tests\Coop\Farmers\Farmers_Smoke_Prod\Farmers_Smoke_Prod.cs" />
+    <Compile Include="Tests\Coop\Farmers\Farmers_Smoke_Stage\Farmers_Smoke_Stage.cs" />
+    <Compile Include="Tests\Coop\Masco\Masco_Smoke_Prod\Masco_Smoke_Prod.cs" />
+    <Compile Include="Tests\Coop\Nationwide\Nationwide-Smoke-Prod\Nationwide-Smoke-prod.cs" />
+    <Compile Include="Tests\Coop\Nationwide\Nationwide-smoke\Nationwide_Smoke_DisplayClaims_QA.cs" />
+    <Compile Include="Tests\Coop\Nationwide\Nationwide-smoke\Nationwide_Smoke_Fundrequest_QA.cs" />
+    <Compile Include="Tests\Coop\Nationwide\Nationwide-smoke\NA_Validate_Claim_Creation_for_Paper_Check_Store.cs" />
+    <Compile Include="Tests\Coop\Nationwide\Nationwide-smoke\NW_Validate_Claim_Creation_for_EFT_Store.cs" />
+    <Compile Include="Tests\Coop\Nationwide\Nationwide-smoke\NW_Validate_EFT_Profile_Creation.cs" />
+    <Compile Include="Tests\Coop\Pandora\PN_Smoke\Pandora_Production_Smoke.cs" />
+    <Compile Include="Tests\Coop\Pandora\PN_Regression\Pandora_Regression.cs" />
+    <Compile Include="Tests\Coop\Pandora\PN_Smoke\Pandora_Smoke_QA.cs" />
+    <Compile Include="Tests\Coop\Prod_BU\Prod_QA_BU\Prod_QA_BU.cs" />
+    <Compile Include="Tests\Coop\RegressionTest_Stage\RegressionTest_Stage.cs" />
+    <Compile Include="Tests\Coop\SmokeTest_Stage\SmokeTest_Stage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DeploymentItems\AccrualUploadSample.xlsx" />
+    <None Include="DeploymentItems\BulkAccrual.csv" />
+    <None Include="DeploymentItems\BulkClaim.xlsx" />
+    <None Include="DeploymentItems\CoOpGuidelines_LCP_2018_Q1_R6.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DeploymentItems\ProgramGuideline.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DeploymentItems\ProgramGuideline_Edit.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DeploymentItems\ReportsToEmail.jmx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DeploymentItems\TenantConfiguraton.jmx" />
+    <None Include="DeploymentItems\V3-Camunda.jmx" />
+    <None Include="DeploymentItems\V3-ClaimManagement.jmx" />
+    <None Include="DeploymentItems\V3-MarketingFundAccount.jmx" />
+    <None Include="DeploymentItems\V3-PaymentAPI.jmx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DeploymentItems\V3-Payment_API.jmx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DeploymentItems\V3-Programs.jmx" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\chromedriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\geckodriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\IEDriverServer.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\MicrosoftWebDriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\msedgedriver.exe" />
+    <Content Include="Assets\UploadFileInChrome.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tests\MDF\Google\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Selenium.Firefox.WebDriver.0.26.0\build\Selenium.Firefox.WebDriver.targets" Condition="Exists('..\packages\Selenium.Firefox.WebDriver.0.26.0\build\Selenium.Firefox.WebDriver.targets')" />
+  <Import Project="..\packages\Selenium.WebDriver.IEDriver.3.150.1\build\Selenium.WebDriver.IEDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.IEDriver.3.150.1\build\Selenium.WebDriver.IEDriver.targets')" />
+</Project>

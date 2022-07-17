@@ -1,0 +1,1245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0 r1823414">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="TenantConfiguraton" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager-LORDA" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">token</stringProp>
+            <stringProp name="Header.value">eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkNfRV9uQ2ZyV2lzS011RnByNG1aR2ZveXpkMCIsImtpZCI6IkNfRV9uQ2ZyV2lzS011RnByNG1aR2ZveXpkMCJ9.eyJpc3MiOiJodHRwOi8vYWNlaGFyZHdhcmUudjVxYS5icmFuZG11c2NsZS5sb2NhbC92NW9wZW5pZCIsImF1ZCI6IkNGTSIsImV4cCI6MTUyNDc1MDg1MCwibmJmIjoxNTI0NzIyMDUwLCJub25jZSI6IjQ2ZTNjNGIxMTExZjQ2ZjQ5NWU0ZDA4ZTkyYWZiYTExIiwiaWF0IjoxNTI0NzIyMDQ5LCJhdF9oYXNoIjoidXhqZTh5cXBVUVU3OHl3QWhLUXgzZyIsInNpZCI6ImE3YzViOGFkNWYxZGE2NjEwNDhiNGYyODQ2OWYxOGJlIiwic3ViIjoiMzUxMjE3NiIsImF1dGhfdGltZSI6MTUyNDcyMjA0OSwiaWRwIjoiaWRzcnYiLCJibWkuYnVzaW5lc3N1bml0aWQiOiI1NjgiLCJibWkuYnVzaW5lc3N1bml0c3lzdGVtbmFtZSI6ImFjZWhhcmR3YXJlIiwiYm1pLnBlcnNvbmlkIjoiNDExNDUyMSIsImJtaS51c2VybmFtZSI6IkxvcmRhIiwiYm1pLmZpcnN0bmFtZSI6IkxvcmVuYSIsImJtaS5sYXN0bmFtZSI6Ik9yZGF6IiwiYm1pLmFkZHJlc3MiOiIxMjMgbWFpbiBzdC4iLCJibWkuYWRkcmVzczIiOiIiLCJibWkuY2l0eSI6ImNsZXZlbGFuZCIsImJtaS50ZWxlcGhvbmUiOiIyMzQxMjM5MDg3IiwiYm1pLnppcGNvZGUiOiI0NDExNCIsImJtaS5zdGF0ZSI6Ik9IIiwiYm1pLmNvdW50cnkiOiJVU0EiLCJibWkudGl0bGUiOiIiLCJibWkuZW1haWwiOiJzdXZhbS5wYXJpamFAYnJhbmRtdXNjbGUuY29tIiwiYm1pLmlzaW50ZXJuYWwiOiJGYWxzZSIsImJtaS5yaWdodCI6WyJBZHZhbmNlZFNlYXJjaFVzZXJzIiwiQWxsb3dPcmRlckFuZFBheSIsIkFsbG93T3JkZXJXaXRob3V0UGF5bWVudCIsIkFsbG93UmVzdWx0VG9FeGNlbCIsIkNhbkJlRW11bGF0ZWQiLCJDYW5FbXVsYXRlIiwiQ2hhbmdlTG9jYXRpb25TdGF0dXMiLCJDb3B5VXNlcnMiLCJDcmVhdGVfQWxsX0FkZHJlc3NCb29rIiwiQ3JlYXRlQWxsIiwiRGVsZXRlX0FsbF9BZGRyZXNzQm9va19Mb2NhdGlvbiIsIkRlbGV0ZUFkTWF0ZXJpYWwiLCJEZWxldGVBbGwiLCJEZWxldGVEZWxpdmVyeVJlcXVlc3RzIiwiRGVsZXRlVXNlcnMiLCJEZWxpdmVyeUFwcHJvdmFsTm90UmVxdWlyZWQiLCJEb3dubG9hZEFzc2V0cyIsIkVkaXRfQWxsX0FkZHJlc3NCb29rX0xvY2F0aW9uIiwiRWRpdEFkTWF0ZXJpYWwiLCJFZGl0QWRNYXRlcmlhbEJ5QXBwcm92ZXIiLCJFZGl0QWxsIiwiRURJVEVNQUlMQllBUFBST1ZFUiIsIkVESVRVU0VSUyIsIkVESVRXRUJQQUdFQllBUFBST1ZFUiIsIkVtYWlsX0FwcHJvdmVfRW1haWxzIiwiRW1haWxTZWFyY2hMb2NhdGlvbnMiLCJFTUFJTFZJRVdBTEwiLCJFTlRFUlBSSVNFQURNSU4iLCJMb2NhdGlvbkFkbWluaXN0cmF0b3IiLCJTZWFyY2hBbmRFbXVsYXRlVXNlcnMiLCJTdXBlckNyZWF0aXZlQXBwcm92ZXIiLCJTdXBlclJlcXVlc3RBcHByb3ZlciIsIlZpZXdfQWxsX0FkZHJlc3NCb29rIiwiVmlld19BbGxfQWRkcmVzc0Jvb2tfTG9jYXRpb24iLCJWaWV3QWxsIiwiVmlld0FsbERvY3VtZW50cyIsIlZpZXdBbGxEb3dubG9hZEhpc3RvcnkiLCJWaWV3QWxsRW1haWxzIiwiVmlld0FsbFdlYlBhZ2VzIiwiVmlld0NyZWF0aXZlQXBwcm92YWxzIiwiVmlld0NyZWF0aXZlcyIsIlZpZXdEZWxpdmVyeU9wdGlvbnMiLCJWaWV3RGVsaXZlcnlSZXF1ZXN0cyIsIlZpZXdEb3dubG9hZEhpc3RvcnkiLCJWaWV3SlBHIiwiVmlld0xvd1Jlc1BERiIsIlZpZXdSZXF1ZXN0QXBwcm92YWxzIiwiVmlld1VzZXJzIiwiV2ViUGFnZVNlYXJjaExvY2F0aW9ucyIsIldFQlBBR0VWSUVXQUxMIiwiY2xhaW0tcmV2aWV3IiwicHJlYXBwcm92YWwtdmlldyIsInN0YXJ0LXdvcmtmbG93IiwiYnJhbmRpbmctZGVsZXRlIiwiY2xhaW0tdmlldyIsImFjY3J1YWwtY3JlYXRlIiwicHJlYXBwcm92YWwtY3JlYXRlIiwiZGVwbG95LXdvcmtmbG93IiwiZGlzYnVyc2VtZW50LXZpZXciLCJ0cmFuc2Zlci1jcmVhdGUiLCJjbGFpbS1jcmVhdGUiLCJhZGp1c3RtZW50LWNyZWF0ZSIsInByb2dyYW0tY3JlYXRlIiwiYnJhbmRpbmctcmV2aWV3IiwicHJlYXBwcm92YWwtZGVsZXRlIiwiY2xhaW0tZGVsZXRlIiwicHJvZ3JhbS11cGRhdGUiLCJwcmVhcHByb3ZhbC1yZXZpZXciLCJhY2NvdW50LWNyZWF0ZSIsImRpc2J1cnNlbWVudC1jcmVhdGUiLCJwcm9ncmFtLWRlbGV0ZSIsImJyYW5kaW5nLWNyZWF0ZSIsImJyYW5kaW5nLXZpZXciLCJkaXNidXJzZW1lbnQtcmV2aWV3IiwicHJvZ3JhbS12aWV3IiwiYWNjb3VudC12aWV3Il0sImFtciI6WyJwYXNzd29yZCJdfQ.0m9-JgU4kUgYWSWcUDKTJiYM80A_7qBRn6kh-GycAO28weqJ02_ZdaE66EMTttcRop91l8UUpJyKy6r-N7EhdLap8aUJp2RGXRP9SFMLO7-KmPUXyG9PoNMWj8PEw2RSC3DDKF19dj-byu5d0m6qSKUzrDJU3ZWrM1_TPzCLDxare1x_Itu6GPl8UomiJ3iBkFQHJpZKbVHd-lwz09A_mjKDdh7aak3qa22oLMK-SIMl1OaaE0zN7AWS9yynZcjM41r_9ajOz4OGkwwudtp8Vqayf8L3cP5fptwZ6v9T2uyVJxrgAuoz6z0Gr_MIdOjh3mAFDT_bZZrrUs04FrEXyw</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Content-Type</stringProp>
+            <stringProp name="Header.value">application/json</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain">azweb02u</stringProp>
+        <stringProp name="HTTPSampler.port">11075</stringProp>
+        <stringProp name="HTTPSampler.protocol">http</stringProp>
+        <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter" enabled="true">
+        <stringProp name="CounterConfig.start">0</stringProp>
+        <stringProp name="CounterConfig.end"></stringProp>
+        <stringProp name="CounterConfig.incr">1</stringProp>
+        <stringProp name="CounterConfig.name">a</stringProp>
+        <stringProp name="CounterConfig.format"></stringProp>
+        <boolProp name="CounterConfig.per_user">true</boolProp>
+      </CounterConfig>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="/Programs-POST" enabled="true">
+        <stringProp name="TestPlan.comments">http://azweb02u:11071/api/ChannelBuilder/v1/Programs?tenantId=tenant1</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">stoptest</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1517563758000</longProp>
+        <longProp name="ThreadGroup.end_time">1517563758000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create New Program1+" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;ClaimDecisionId&quot;: &quot;24&quot;,&#xd;
+  &quot;FundDistributionHierarchy&quot;: &quot;org&quot;,&#xd;
+  &quot;HierarchyLevel&quot;: &quot;6,7&quot;,&#xd;
+  &quot;Documents&quot;: [],&#xd;
+  &quot;ProgramName&quot;: &quot;API-${__javaScript(new Date().getTime();)}&quot;,&#xd;
+  &quot;Description&quot;: &quot;Creating a Program&quot;,&#xd;
+  &quot;ProgramCurrency&quot;: &quot;USD&quot;,&#xd;
+  &quot;StartDate&quot;: &quot;2018-04-25T18:30:00.000Z&quot;,&#xd;
+  &quot;EndDate&quot;: &quot;2019-06-13T18:30:00.000Z&quot;,&#xd;
+  &quot;ClaimWorkflowId&quot;: 23,&#xd;
+  &quot;AllowOverdraft&quot;: &quot;Yes&quot;,&#xd;
+  &quot;BrandingRequired&quot;: &quot;Yes&quot;,&#xd;
+  &quot;AllowECom&quot;: &quot;yes&quot;,&#xd;
+  &quot;AccrualType&quot;: &quot;Flat&quot;,&#xd;
+  &quot;FlatAccrualPeriod&quot;: &quot;Annual&quot;,&#xd;
+  &quot;RollingAccrualPeriod&quot;: &quot;&quot;,&#xd;
+  &quot;LastTransactionDate&quot;: &quot;2019-07-20T18:30:00.000Z&quot;,&#xd;
+  &quot;ExpirationDate&quot;: &quot;2019-08-27T18:30:00.000Z&quot;,&#xd;
+  &quot;Activities&quot;: [&#xd;
+    {&#xd;
+      &quot;DirectMailName&quot;: &quot;Direct Mail&quot;,&#xd;
+      &quot;DirectMailDescription&quot;: &quot;1. Image of the creative. &lt;/n&gt; 2. Invoice.&quot;,&#xd;
+      &quot;FleetgraphicsDescription&quot;: &quot;1. Image of the creative.&lt;/n&gt; 2. Invoice.&quot;,&#xd;
+      &quot;FleetgraphicsName&quot;: &quot;Fleet graphics&quot;,&#xd;
+      &quot;ROPName&quot;: &quot;ROP&quot;,&#xd;
+      &quot;ROPDescription&quot;: &quot;1. Image of the creative.&lt;/n&gt; 2. Invoice.&lt;/n&gt; 3. One (1) original full-page tear sheet. (A tear heet is a page from the publication that serves as verification that the advertisement was published).&quot;,&#xd;
+      &quot;DigitalandSocialMediaName&quot;: &quot;Digital and Social Media&quot;,&#xd;
+      &quot;DigitalandSocialMediaDescription&quot;: &quot;1. Image of the Creative (Screenshot of the ad from the system or mobile).&lt;/n&gt; 2. Invoice.&quot;,&#xd;
+      &quot;OutofHomeName&quot;: &quot;Out of Home&quot;,&#xd;
+      &quot;OutofHomeDescription&quot;: &quot;1. Image of the Billboard.&lt;/n&gt; 2. Invoice.&quot;,&#xd;
+      &quot;SponsorshipName&quot;: &quot;Sponsorship&quot;,&#xd;
+      &quot;PrePrintName&quot;: &quot;Pre Print&quot;,&#xd;
+      &quot;TVName&quot;: &quot;TV&quot;,&#xd;
+      &quot;TVDescription&quot;: &quot;1. Invoice.&lt;/n&gt; 2. Notarized script with approved ANA/RAB or ANA TVB certification and net cost of spots.&quot;,&#xd;
+      &quot;ReceiptAdvertisingName&quot;: &quot;Receipt Advertising&quot;,&#xd;
+      &quot;BlueCMNBucketName&quot;: &quot;Blue CMN Bucket&quot;,&#xd;
+      &quot;RadioName&quot;: &quot;Radio&quot;,&#xd;
+      &quot;RadioDescription&quot;: &quot;1. Invoice.&lt;/n&gt; 2. Notarized script with approved ANA/RAB or ANA TVB certification and net cost of spots.&quot;,&#xd;
+      &quot;ReimbursementType&quot;: &quot;Fixed&quot;,&#xd;
+      &quot;FixedReimbursement&quot;: 10,&#xd;
+      &quot;AllowCapping&quot;: &quot;yes&quot;,&#xd;
+      &quot;DirectMail&quot;: false,&#xd;
+      &quot;Fleetgraphics&quot;: false,&#xd;
+      &quot;ROP&quot;: false,&#xd;
+      &quot;DigitalandSocialMedia&quot;: true,&#xd;
+      &quot;OutofHome&quot;: false,&#xd;
+      &quot;Sponsorship&quot;: false,&#xd;
+      &quot;SponsorshipDescription&quot;: &quot;&quot;,&#xd;
+      &quot;PrePrint&quot;: false,&#xd;
+      &quot;PrePrintDescription&quot;: &quot;&quot;,&#xd;
+      &quot;TV&quot;: true,&#xd;
+      &quot;ReceiptAdvertising&quot;: false,&#xd;
+      &quot;ReceiptAdvertisingDescription&quot;: &quot;&quot;,&#xd;
+      &quot;BlueCMNBucket&quot;: false,&#xd;
+      &quot;BlueCMNBucketDescription&quot;: &quot;&quot;,&#xd;
+      &quot;Radio&quot;: false,&#xd;
+      &quot;ActivitiesTableTextField&quot;: &quot;&quot;,&#xd;
+      &quot;DirectMailRP&quot;: null,&#xd;
+      &quot;DirectMailCapRP&quot;: null,&#xd;
+      &quot;FleetgraphicsRP&quot;: null,&#xd;
+      &quot;FleetgraphicsCapRP&quot;: null,&#xd;
+      &quot;ROPRP&quot;: null,&#xd;
+      &quot;ROPCapRP&quot;: null,&#xd;
+      &quot;DigitalandSocialMediaRP&quot;: null,&#xd;
+      &quot;DigitalandSocialMediaCapRP&quot;: 55,&#xd;
+      &quot;OutofHomeRP&quot;: null,&#xd;
+      &quot;OutofHomeCapRP&quot;: null,&#xd;
+      &quot;SponsorshipRP&quot;: null,&#xd;
+      &quot;SponsorshipCapRP&quot;: null,&#xd;
+      &quot;PrePrintRP&quot;: null,&#xd;
+      &quot;PrePrintCapRP&quot;: null,&#xd;
+      &quot;TVRP&quot;: null,&#xd;
+      &quot;TVCapRP&quot;: 25,&#xd;
+      &quot;ReceiptAdvertisingRP&quot;: null,&#xd;
+      &quot;ReceiptAdvertisingCapRP&quot;: null,&#xd;
+      &quot;BlueCMNBucketRP&quot;: null,&#xd;
+      &quot;BlueCMNBucketCapRP&quot;: null,&#xd;
+      &quot;RadioRP&quot;: null,&#xd;
+      &quot;RadioCapRP&quot;: null&#xd;
+    }&#xd;
+  ],&#xd;
+  &quot;FormKey&quot;: &quot;programsace&quot;,&#xd;
+  &quot;ProgramStatusId&quot;: 3&#xd;
+}&#xd;
+</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port">11071</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/ChannelBuilder/v1/Programs?tenantId=acehardware</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">Positive Scenario-This will create a program</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="2524">OK</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_message</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1170183121">&quot;Program Created successfully.&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="/Programs-GET" enabled="true">
+        <stringProp name="TestPlan.comments">http://azweb02u:11071/api/ChannelBuilder/v1/Programs</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">stoptest</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1517563721000</longProp>
+        <longProp name="ThreadGroup.end_time">1517563721000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="List of All Programs1+" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="period" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">30</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">period</stringProp>
+              </elementProp>
+              <elementProp name="startDate" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">null</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">startDate</stringProp>
+              </elementProp>
+              <elementProp name="endDate" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">null</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">endDate</stringProp>
+              </elementProp>
+              <elementProp name="tenantId" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">acehardware</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">tenantId</stringProp>
+              </elementProp>
+              <elementProp name="limit" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">1</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">limit</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port">11071</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/ChannelBuilder/v1/Programs</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">Positive Scenario-This will fetch all the Programs List and their Details</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="2524">OK</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_message</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="34333898">&quot;_id&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="35548181">&quot;ProgramName&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">programid</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$..$oid</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+            <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">log.info(&quot;Request Id in Thread --&gt;&gt;&gt;&gt;&gt; &quot; + &quot;${programid_ALL}&quot;);
+log.info(&quot;Request Id in Thread --&gt;&gt;&gt;@@@&gt;&gt; &quot; + &quot;${programid_1}&quot;);
+String[] prgid = vars.get(&quot;programid_ALL&quot;).split(&quot;,&quot;); 
+int len = prgid.length;
+log.info(&quot;----&gt;&gt;&gt;&gt;&gt; &quot; + len);
+ArrayList numProgramid = new ArrayList();
+for(int i=0;i&lt;len;i++)
+{
+	numProgramid.add(prgid[i]);
+}
+bsh.shared.numProgramid=numProgramid;</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">pname</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$..ProgramName</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+            <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">log.info(&quot;Request Id in Thread --&gt;&gt;&gt;&gt;&gt; &quot; + &quot;${pname_ALL}&quot;);
+log.info(&quot;Request Id in Thread --&gt;&gt;&gt;@@@&gt;&gt; &quot; + &quot;${pname_1}&quot;);
+String[] prgname = vars.get(&quot;pname_ALL&quot;).split(&quot;,&quot;); 
+int len = prgname.length;
+log.info(&quot;----&gt;&gt;&gt;&gt;&gt; &quot; + len);
+ArrayList Programname = new ArrayList();
+for(int i=0;i&lt;len;i++)
+{
+	Programname.add(prgname[i]);
+}
+bsh.shared.Programname=Programname;</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">userid</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$..CreatedByUserId</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+            <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">log.info(&quot;Request Id in Thread --&gt;&gt;&gt;&gt;&gt; &quot; + &quot;${userid_ALL}&quot;);
+log.info(&quot;Request Id in Thread --&gt;&gt;&gt;@@@&gt;&gt; &quot; + &quot;${userid_1}&quot;);
+String[] usridobj = vars.get(&quot;userid_ALL&quot;).split(&quot;,&quot;); 
+int len = usridobj.length;
+log.info(&quot;----&gt;&gt;&gt;&gt;&gt; &quot; + len);
+ArrayList UserId = new ArrayList();
+for(int i=0;i&lt;len;i++)
+{
+	UserId.add(usridobj[i]);
+}
+bsh.shared.UserId=UserId;</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="/TenantConfiguration/GetTenantWorkFlow-GET" enabled="true">
+        <stringProp name="TestPlan.comments">http://azweb02u:11075/api/TenantConfiguration/v1/TenantConfiguration/GetTenantWorkFlow?tenantId=acehardware&amp;workflowIdList=12</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1525325445000</longProp>
+        <longProp name="ThreadGroup.end_time">1525325445000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetTenantWorkflow" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/TenantConfiguration/v1/TenantConfiguration/GetTenantWorkFlow?tenantId=acehardware&amp;workflowIdList=23</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="2524">OK</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_message</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="/TenantConfiguration/GetFormKey-GET" enabled="true">
+        <stringProp name="TestPlan.comments">http://azweb02u:11075/api/TenantConfiguration/v1/TenantConfiguration/GetFormKey?programId=12&amp;businessProcessTypeId=123&amp;tenantId=acehardware</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1525325445000</longProp>
+        <longProp name="ThreadGroup.end_time">1525325445000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetFormKey1+" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/TenantConfiguration/v1/TenantConfiguration/GetFormKey?programId=${__BeanShell(bsh.shared.numProgramid.get(${a}),)}&amp;businessProcessTypeId=1&amp;tenantId=acehardware</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">Positive Scenario-This will </stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="2524">OK</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_message</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="/TenantConfiguration/GetTenantFormKey-GET" enabled="true">
+        <stringProp name="TestPlan.comments">http://azweb02u:11075/api/TenantConfiguration/v1/TenantConfiguration/GetTenantFormKey?tenantId=acehardware&amp;formType=123</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1525325445000</longProp>
+        <longProp name="ThreadGroup.end_time">1525325445000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetTenantFormKey1+" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/TenantConfiguration/v1/TenantConfiguration/GetTenantFormKey?tenantId=acehardware&amp;formType=ClaimFormKey</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="2524">OK</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_message</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="/TenantConfiguration/GetStartEventId-GET" enabled="true">
+        <stringProp name="TestPlan.comments">http://azweb02u:11075/api/TenantConfiguration/v1/TenantConfiguration/GetStartEventId?programId=12&amp;businessProcessType=12&amp;tenantId=acehardware</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1525325445000</longProp>
+        <longProp name="ThreadGroup.end_time">1525325445000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetStartEventId1+" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/TenantConfiguration/v1/TenantConfiguration/GetStartEventId?programId=${__BeanShell(bsh.shared.numProgramid.get(${a}),)}&amp;businessProcessType=Claim&amp;tenantId=acehardware</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="2524">OK</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_message</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="/TenantConfiguration/GetProgramWorkFlowFiles-GET" enabled="true">
+        <stringProp name="TestPlan.comments">http://azweb02u:11075/api/TenantConfiguration/v1/TenantConfiguration/GetProgramWorkFlowFiles?programId=12&amp;tenantId=acehardware</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1525325445000</longProp>
+        <longProp name="ThreadGroup.end_time">1525325445000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetProgramworkflowfiles1+" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/TenantConfiguration/v1/TenantConfiguration/GetProgramWorkFlowFiles?programId=${__BeanShell(bsh.shared.numProgramid.get(${a}),)}&amp;tenantId=acehardware</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="2524">OK</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_message</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="/TenantConfiguration/GetTenantConfiguration-GET" enabled="true">
+        <stringProp name="TestPlan.comments">http://azweb02u:11075/api/TenantConfiguration/v1/TenantConfiguration/GetTenantConfiguration?tenantId=acehardware</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1525325445000</longProp>
+        <longProp name="ThreadGroup.end_time">1525325445000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetTenantConfiguration1+" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/TenantConfiguration/v1/TenantConfiguration/GetTenantConfiguration?tenantId=acehardware</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="2524">OK</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_message</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="GET /TenantConfiguration/UpdateWorkflowAsDeployed-GET" enabled="true">
+        <stringProp name="TestPlan.comments">http://azweb02u:11075/api/TenantConfiguration/v1/TenantConfiguration/UpdateWorkflowAsDeployed?programId=12&amp;tenantId=acehardware</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1525325445000</longProp>
+        <longProp name="ThreadGroup.end_time">1525325445000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UpdateWorkflowAsDeployed1+" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/TenantConfiguration/v1/TenantConfiguration/UpdateWorkflowAsDeployed?programId=${__BeanShell(bsh.shared.numProgramid.get(${a}),)}&amp;tenantId=acehardware</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="2524">OK</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_message</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="/TenantConfiguration/SaveBusinessProcessDefinition-POST" enabled="true">
+        <stringProp name="TestPlan.comments">http://azweb02u:11075/api/TenantConfiguration/v1/TenantConfiguration/SaveBusinessProcessDefinition</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1525325445000</longProp>
+        <longProp name="ThreadGroup.end_time">1525325445000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="SaveBusinessProcessDefinition1+" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+	&quot;_id&quot; :&#xd;
+&#xd;
+{ &quot;$oid&quot;: &quot;${__BeanShell(bsh.shared.numProgramid.get(${a}),)}&quot; }&#xd;
+,&#xd;
+	&quot;ClaimDecisionId&quot; : &quot;24&quot;,&#xd;
+	&quot;FundDistributionHierarchy&quot; : &quot;org&quot;,&#xd;
+	&quot;HierarchyLevel&quot; : &quot;6,7&quot;,&#xd;
+	&quot;Documents&quot; : [ ],&#xd;
+	&quot;ProgramName&quot; : &quot;API-1.526301401781E12&quot;,&#xd;
+	&quot;Description&quot; : &quot;Creating a Program&quot;,&#xd;
+	&quot;ProgramCurrency&quot; : &quot;USD&quot;,&#xd;
+	&quot;StartDate&quot; : &quot;2018-04-25T18:30:00Z&quot;,&#xd;
+	&quot;EndDate&quot; : &quot;2019-06-13T18:30:00Z&quot;,&#xd;
+	&quot;ClaimWorkflowId&quot; : 23,&#xd;
+	&quot;AllowOverdraft&quot; : &quot;Yes&quot;,&#xd;
+	&quot;BrandingRequired&quot; : &quot;Yes&quot;,&#xd;
+	&quot;AllowECom&quot; : &quot;yes&quot;,&#xd;
+	&quot;AccrualType&quot; : &quot;Flat&quot;,&#xd;
+	&quot;FlatAccrualPeriod&quot; : &quot;Annual&quot;,&#xd;
+	&quot;RollingAccrualPeriod&quot; : &quot;&quot;,&#xd;
+	&quot;LastTransactionDate&quot; : &quot;2019-07-20T18:30:00Z&quot;,&#xd;
+	&quot;ExpirationDate&quot; : &quot;2019-08-27T18:30:00Z&quot;,&#xd;
+	&quot;Activities&quot; : [&#xd;
+		{&#xd;
+			&quot;DirectMailName&quot; : &quot;Direct Mail&quot;,&#xd;
+			&quot;DirectMailDescription&quot; : &quot;1. Image of the creative. &lt;/n&gt; 2. Invoice.&quot;,&#xd;
+			&quot;FleetgraphicsDescription&quot; : &quot;1. Image of the creative.&lt;/n&gt; 2. Invoice.&quot;,&#xd;
+			&quot;FleetgraphicsName&quot; : &quot;Fleet graphics&quot;,&#xd;
+			&quot;ROPName&quot; : &quot;ROP&quot;,&#xd;
+			&quot;ROPDescription&quot; : &quot;1. Image of the creative.&lt;/n&gt; 2. Invoice.&lt;/n&gt; 3. One (1) original full-page tear sheet. (A tear heet is a page from the publication that serves as verification that the advertisement was published).&quot;,&#xd;
+			&quot;DigitalandSocialMediaName&quot; : &quot;Digital and Social Media&quot;,&#xd;
+			&quot;DigitalandSocialMediaDescription&quot; : &quot;1. Image of the Creative (Screenshot of the ad from the system or mobile).&lt;/n&gt; 2. Invoice.&quot;,&#xd;
+			&quot;OutofHomeName&quot; : &quot;Out of Home&quot;,&#xd;
+			&quot;OutofHomeDescription&quot; : &quot;1. Image of the Billboard.&lt;/n&gt; 2. Invoice.&quot;,&#xd;
+			&quot;SponsorshipName&quot; : &quot;Sponsorship&quot;,&#xd;
+			&quot;PrePrintName&quot; : &quot;Pre Print&quot;,&#xd;
+			&quot;TVName&quot; : &quot;TV&quot;,&#xd;
+			&quot;TVDescription&quot; : &quot;1. Invoice.&lt;/n&gt; 2. Notarized script with approved ANA/RAB or ANA TVB certification and net cost of spots.&quot;,&#xd;
+			&quot;ReceiptAdvertisingName&quot; : &quot;Receipt Advertising&quot;,&#xd;
+			&quot;BlueCMNBucketName&quot; : &quot;Blue CMN Bucket&quot;,&#xd;
+			&quot;RadioName&quot; : &quot;Radio&quot;,&#xd;
+			&quot;RadioDescription&quot; : &quot;1. Invoice.&lt;/n&gt; 2. Notarized script with approved ANA/RAB or ANA TVB certification and net cost of spots.&quot;,&#xd;
+			&quot;ReimbursementType&quot; : &quot;Fixed&quot;,&#xd;
+			&quot;FixedReimbursement&quot; : 10,&#xd;
+			&quot;AllowCapping&quot; : &quot;yes&quot;,&#xd;
+			&quot;DirectMail&quot; : false,&#xd;
+			&quot;Fleetgraphics&quot; : false,&#xd;
+			&quot;ROP&quot; : false,&#xd;
+			&quot;DigitalandSocialMedia&quot; : true,&#xd;
+			&quot;OutofHome&quot; : false,&#xd;
+			&quot;Sponsorship&quot; : false,&#xd;
+			&quot;SponsorshipDescription&quot; : &quot;&quot;,&#xd;
+			&quot;PrePrint&quot; : false,&#xd;
+			&quot;PrePrintDescription&quot; : &quot;&quot;,&#xd;
+			&quot;TV&quot; : true,&#xd;
+			&quot;ReceiptAdvertising&quot; : false,&#xd;
+			&quot;ReceiptAdvertisingDescription&quot; : &quot;&quot;,&#xd;
+			&quot;BlueCMNBucket&quot; : false,&#xd;
+			&quot;BlueCMNBucketDescription&quot; : &quot;&quot;,&#xd;
+			&quot;Radio&quot; : false,&#xd;
+			&quot;ActivitiesTableTextField&quot; : &quot;&quot;,&#xd;
+			&quot;DirectMailRP&quot; : null,&#xd;
+			&quot;DirectMailCapRP&quot; : null,&#xd;
+			&quot;FleetgraphicsRP&quot; : null,&#xd;
+			&quot;FleetgraphicsCapRP&quot; : null,&#xd;
+			&quot;ROPRP&quot; : null,&#xd;
+			&quot;ROPCapRP&quot; : null,&#xd;
+			&quot;DigitalandSocialMediaRP&quot; : null,&#xd;
+			&quot;DigitalandSocialMediaCapRP&quot; : 55,&#xd;
+			&quot;OutofHomeRP&quot; : null,&#xd;
+			&quot;OutofHomeCapRP&quot; : null,&#xd;
+			&quot;SponsorshipRP&quot; : null,&#xd;
+			&quot;SponsorshipCapRP&quot; : null,&#xd;
+			&quot;PrePrintRP&quot; : null,&#xd;
+			&quot;PrePrintCapRP&quot; : null,&#xd;
+			&quot;TVRP&quot; : null,&#xd;
+			&quot;TVCapRP&quot; : 25,&#xd;
+			&quot;ReceiptAdvertisingRP&quot; : null,&#xd;
+			&quot;ReceiptAdvertisingCapRP&quot; : null,&#xd;
+			&quot;BlueCMNBucketRP&quot; : null,&#xd;
+			&quot;BlueCMNBucketCapRP&quot; : null,&#xd;
+			&quot;RadioRP&quot; : null,&#xd;
+			&quot;RadioCapRP&quot; : null&#xd;
+		}&#xd;
+	],&#xd;
+	&quot;FormKey&quot; : &quot;programsace&quot;,&#xd;
+	&quot;ProgramStatusId&quot; : 5,&#xd;
+	&quot;ModifiedByUserId&quot; : &quot;3512176&quot;,&#xd;
+	&quot;CreatedByUserId&quot; : &quot;3512176&quot;,&#xd;
+	&quot;ModifiedDate&quot; : &quot;2018-05-14T18:08:41.903+05:30&quot;,&#xd;
+	&quot;CreatedDate&quot; : &quot;2018-05-14T18:06:42.255+05:30&quot;,&#xd;
+	&quot;TenantId&quot; : &quot;acehardware&quot;,&#xd;
+	&quot;ProgramId&quot; : 424&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/TenantConfiguration/v1/TenantConfiguration/SaveBusinessProcessDefinition</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="2524">OK</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_message</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="/TenantConfiguration/GetStartEventIdForTenant-GET" enabled="true">
+        <stringProp name="TestPlan.comments">http://azweb02u:11075/api/TenantConfiguration/v1/TenantConfiguration/GetStartEventIdForTenant?businessProcessTypeName=12&amp;tenantId=acehardware</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1525325445000</longProp>
+        <longProp name="ThreadGroup.end_time">1525325445000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetStartEventIdforTenant1+" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/TenantConfiguration/v1/TenantConfiguration/GetStartEventIdForTenant?businessProcessTypeName=Claim&amp;tenantId=acehardware</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="2524">OK</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_message</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="/TenantConfiguration/InsertTenant-POST" enabled="true">
+        <stringProp name="TestPlan.comments">http://azweb02u:11075/api/TenantConfiguration/v1/TenantConfiguration/InsertTenant?tenantId=acehardware</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1525325445000</longProp>
+        <longProp name="ThreadGroup.end_time">1525325445000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="InsertTenant1+" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">[&#xd;
+  {&#xd;
+    &quot;key&quot;: &quot;brandingExpirationTimeline&quot;,&#xd;
+    &quot;value&quot;: &quot;365&quot;&#xd;
+  }&#xd;
+]</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/TenantConfiguration/v1/TenantConfiguration/InsertTenant?tenantId=acehardware</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="2524">OK</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_message</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="/TenantConfiguration/UpdateTenant-PUT" enabled="true">
+        <stringProp name="TestPlan.comments">http://azweb02u:11075/api/TenantConfiguration/v1/TenantConfiguration/UpdateTenant?tenantId=acehardware</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1525325445000</longProp>
+        <longProp name="ThreadGroup.end_time">1525325445000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UpdateTenant1+" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;key&quot;: &quot;ProgramGuidelinesFileFormat&quot;,&#xd;
+    &quot;value&quot;: &quot;.pdf,.doc,.docx&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/TenantConfiguration/v1/TenantConfiguration/UpdateTenant?tenantId=acehardware</stringProp>
+          <stringProp name="HTTPSampler.method">PUT</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="2524">OK</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_message</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="/Programs/{id}-DELETE" enabled="true">
+        <stringProp name="TestPlan.comments">http://azweb02u:11071/api/ChannelBuilder/v1/Programs/{id}</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1518071369000</longProp>
+        <longProp name="ThreadGroup.end_time">1518071369000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Delete a Program 1+" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port">11071</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/ChannelBuilder/v1/Programs/${__BeanShell(bsh.shared.numProgramid.get(${a}),)}</stringProp>
+          <stringProp name="HTTPSampler.method">DELETE</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">This will delete a program by passing Program Id</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="2524">OK</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_message</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>false</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>false</subresults>
+            <responseData>true</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <hostname>true</hostname>
+            <threadCounts>true</threadCounts>
+            <sampleCount>true</sampleCount>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
